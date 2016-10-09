@@ -48,3 +48,10 @@ def getData():
 	return X,y
 
 X,y = getData()
+classes = np.unique(y) # Get the unique examples
+print classes
+# Iterate over both index and value
+for jdx, lclass in enumerate(classes):
+	idx = y==lclass # Returns a true or flase with the length of y
+	idx = np.where(y==lclass)[0]
+	xlc = X[idx,:] # Get the x for the class labels. Vectors are rows.
