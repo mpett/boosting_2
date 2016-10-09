@@ -50,8 +50,24 @@ def getData():
 X,y = getData()
 classes = np.unique(y) # Get the unique examples
 print classes
+
 # Iterate over both index and value
 for jdx, lclass in enumerate(classes):
 	idx = y==lclass # Returns a true or flase with the length of y
 	idx = np.where(y==lclass)[0]
 	xlc = X[idx,:] # Get the x for the class labels. Vectors are rows.
+
+# Subtract the vector using a for loop
+X = np.array([(1,2,3),(4,5,6),(7,8,9)])
+print X
+u = np.array((1,2,3))
+
+for i_row in range(0, X.shape[0]):
+	X[i_row,:] = X[i_row,:] - u
+print(X)
+
+# Subtract using broadcasting
+X = np.array([(1,2,3),(4,5,6),(7,8,9)])
+u = np.array((1,2,3))
+X = X - u
+print X
