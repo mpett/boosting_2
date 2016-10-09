@@ -36,20 +36,15 @@ def getData():
 	fX = open('irisX.txt','r')
 	fy = open('irisY.txt','r')
 	a = np.array([(1,2,3,3), (3,4,4,4)])
-
 	a = np.append(a, [(6,6,6,3)], axis = 0)
 	for line in fX:
 		b = np.fromstring(line,sep=',')
 		print b
 		a = np.append(a, [(b)], axis = 0)
-	print a.shape
-	print a
 	X = a
-
 	y = np.array([0,0,0])
 	for line in fy:
 		y=np.append(y, float(line))
-	print y
-	print y.shape
+	return X,y
 
-getData()
+X,y = getData()
